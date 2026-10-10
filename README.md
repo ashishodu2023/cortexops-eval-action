@@ -225,7 +225,7 @@ The action needs `cortexops` 0.6.0 or newer, the first release with `eval run --
 - For the strongest supply-chain guarantee, pin the full commit SHA of a release:
   `uses: ashishodu2023/cortexops-eval-action@<sha> # v1.0.0`.
 
-See [CHANGELOG.md](CHANGELOG.md).
+See the [changelog](https://github.com/ashishodu2023/cortexops-eval-action/blob/main/CHANGELOG.md).
 
 ## Permissions and forks
 
@@ -272,4 +272,4 @@ requests there.
 
 ## License
 
-[MIT](LICENSE)
+[MIT](https://github.com/ashishodu2023/cortexops-eval-action/blob/main/LICENSE)
