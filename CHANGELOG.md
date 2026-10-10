@@ -2,6 +2,11 @@
 
 All notable changes to the CortexOps Eval Gate action. The `v1` tag always points at the latest 1.x release.
 
+## v1.0.1 - 2026-10-10
+
+- Shortened the action description to meet the GitHub Marketplace limit of 125 characters. No behaviour
+  change.
+
 ## v1.0.0 - 2026-10-10
 
 First standalone release, published from `actions/eval-gate` in
