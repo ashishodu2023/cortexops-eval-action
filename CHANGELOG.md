@@ -18,6 +18,9 @@ First standalone release, published from `actions/eval-gate` in
 - Optional LLM-as-judge scoring (`judge`, `openai-api-key`) and upload to CortexOps (`api-key`, `api-url`).
 - Outputs: `passed`, `exit-code`, `task-completion`, `pass-rate`, `tool-accuracy`, `mean-score`, `failed`,
   `summary-path`, `report-path`, `junit-path`, `comment-url`.
+- When the gate fails or the eval cannot run, `passed`, `exit-code`, and the metric outputs are still set and
+  `fail-job: false` keeps the job green. The copy at `ashishodu2023/cortexops/actions/eval-gate@v0.6.0`
+  stopped before writing them.
 - Installs `cortexops>=0.6.0,<0.7` from PyPI by default. `cortexops-version` also accepts a version,
   `latest`, any pip specifier, a `git+https://...#subdirectory=sdk` requirement, a local path, or `none`.
   The monorepo-only `bundled` value is not supported and fails with a configuration error.
