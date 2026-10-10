@@ -202,10 +202,10 @@ runs:
         [ -n "$OPENAI_API_KEY" ] || unset OPENAI_API_KEY
         [ -n "$CORTEXOPS_API_KEY" ] || unset CORTEXOPS_API_KEY
 
+        code=0
         if [ -n "$INPUT_COMMAND" ]; then
           echo "Running custom command: $INPUT_COMMAND"
-          bash -c "$INPUT_COMMAND"
-          code=$?
+          bash -c "$INPUT_COMMAND" || code=$?
         elif [ -z "$INPUT_DATASET" ]; then
           echo "::error title=CortexOps eval gate::Either 'dataset' or 'command' must be set."
           code=2
@@ -224,8 +224,7 @@ runs:
             args+=($INPUT_EXTRA_ARGS)
             set +f
           fi
-          "$PY" -m cortexops.cli "${args[@]}"
-          code=$?
+          "$PY" -m cortexops.cli "${args[@]}" || code=$?
         fi
 
         {
